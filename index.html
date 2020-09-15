@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Star Wars Gallery</title>
+    </head>
+
+    <body>
+
+    	<style>
+
+    		body{
+    			background-color: black;
+    		}
+
+    		button {
+    			background-color: black;
+    			color: white;
+    		}
+
+    		 button:hover {
+            	cursor: pointer;
+            }
+
+    		img{
+    			object-fit: cover;
+    			width: 100%;
+    			height: 100%;
+    		}
+    		.grid-container {
+			  display: grid;
+			  grid-template-columns: repeat(4, auto);
+			  grid-template-rows: repeat(5, 200px);
+			  grid-gap: 10px;
+			  background-color: yellow;
+			  padding: 10px;
+			}
+
+		</style>
+
+		<audio id="myAudio">
+		  <source src="audio.mp3" type="audio/mpeg">
+	  	</audio>
+
+		<button id="playButton" onclick="playAudio()" type="button">Play</button>
+		<button onclick="stopAudio()" type="button">Stop</button> 
+
+    	<div class="grid-container">
+    			<img src="1.jpg" alt="Image of Kylo Ren">
+				<img src="8.jpg" alt="Image of Baby Yoda">
+				<img src="3.jpg" alt="Image of Jyn Erso">
+				<img src="17.jpg" alt="Image of Darth Vader">
+				<img src="16.jpg" alt="Image of a Stormtrooper">
+				<img src="6.jpg" alt="Image of Jabba The Hutt">
+				<img src="7.jpeg" alt="Image of Death Star">
+				<img src="2.jpg" alt="Image of Anakin Skywalker">
+				<img src="9.png" alt="Image of Baby Yoda using The Force">
+				<img src="12.jpg" alt="Image of Rey using The Force">
+				<img src="18.webp" alt="Image of Mando">
+				<img src="10.jpg" alt="Image of Chewbacca">
+				<img src="13.jpg" alt="Image of Kylo Ren fighting Rey">
+    	    	<img src="14.jpeg" alt="Image of two Jawas">
+				<img src="15.webp" alt="Image of R2D2">
+				<img src="5.jpg" alt="Image of Luke Skywalker">
+				<img src="4.jpg" alt="Image of Darth Maul">
+				<img src="11.jpg" alt="Image of Yoda">
+				<img src="19.jpg" alt="Image of Darth Vader">
+			    <img src="20.jpg" alt="Image of Darth Sidious">
+		</div>
+
+		<script>
+
+			var audio = document.getElementById("myAudio"); 
+
+			function playAudio() { 
+				if(audio.paused) {
+					audio.play()
+					playButton.innerHTML = "Pause"
+				} else {
+			    	audio.pause()
+			    	playButton.innerHTML = "Play"
+			    }
+			} 
+
+			function stopAudio() { 
+			  audio.pause();
+			  audio.currentTime = 0;
+			  playButton.innerHTML = "Play" 
+			} 
+
+			audio.onended = function() {
+				playButton.innerHTML = "Play"
+			};
+
+		</script>
+
+	</body>
+
+</html>
+
+
+    	    
+
+
